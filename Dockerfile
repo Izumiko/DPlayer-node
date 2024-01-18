@@ -6,7 +6,7 @@ RUN mkdir -p /temp/dev
 COPY . /temp/dev/
 RUN cd /temp/dev && bun install --frozen-lockfile && bun run build
 
-ROM base AS release
+FROM base AS release
 COPY --from=install /temp/dev/dist/ .
 
 EXPOSE 1207/tcp

@@ -12,7 +12,7 @@ services:
     ports:
       - "127.0.0.1:6379:6379"
   web:
-    build: .
+    image: izumiko/dplayer-node:latest
     links:
       - mongo
       - redis
