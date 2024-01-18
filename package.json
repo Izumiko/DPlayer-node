@@ -1,24 +1,28 @@
 {
-  "name": "DPlayer_nodejs",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "author": "DIYgod",
-  "license": "MIT",
+  "name": "dplayer-server",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun run node_modules/.bin/esbuild index.ts --bundle --minify --sourcemap --platform=node --outdir=dist",
+    "start": "bun run index.ts",
+    "dev": "bun --watch run index.ts"
+  },
   "devDependencies": {
-    "eslint": "5.0.1",
-    "eslint-config-prettier": "2.9.0",
-    "eslint-plugin-prettier": "2.6.1"
+    "@types/bun": "^1.0.2",
+    "@types/koa": "^2.14.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/winston": "^2.4.4",
+    "esbuild": "^0.19.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "cheerio": "1.0.0-rc.2",
-    "koa": "2.5.1",
-    "koa-bodyparser": "4.2.1",
-    "koa-router": "7.4.0",
-    "mongoose": "5.1.7",
-    "node-fetch": "2.1.2",
-    "redis": "2.8.0",
-    "winston": "3.0.0",
-    "xml2js": "0.4.19"
+    "@koa/bodyparser": "^5.0.0",
+    "@koa/router": "^12.0.1",
+    "cheerio": "^1.0.0-rc.12",
+    "koa": "^2.15.0",
+    "mongoose": "^8.1.0",
+    "redis": "^4.6.12"
   }
 }
